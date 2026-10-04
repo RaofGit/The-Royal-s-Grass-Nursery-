@@ -48,7 +48,7 @@
   </header>
 
   <main>
-    <!-- 1. Full-Screen Luxury Hero Section -->
+    <!-- 1. Hero Section -->
     <section class="hero" style="background-image: linear-gradient(rgba(10, 26, 15, 0.75), rgba(10, 26, 15, 0.75)), url('23497_8986a2.jpg');">
       <div class="container hero-content">
         <span class="badge">Lahore's #1 Lawn & Grass Specialist</span>
@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <!-- 2. Grass Varieties Introduction Section -->
+    <!-- 2. Grass Varieties Section -->
     <section class="section bg-light" id="varieties">
       <div class="container">
         <div class="section-title">
@@ -99,6 +99,7 @@
                 <li><i class="fa-solid fa-check"></i> Slow growing & low maintenance</li>
                 <li><i class="fa-solid fa-check"></i> High shade & heat tolerance</li>
               </ul>
+              <button class="btn btn-outline full-width mt-15" onclick="openBookingModal('Korean Grass')">Select Korean Grass</button>
             </div>
           </div>
 
@@ -115,6 +116,7 @@
                 <li><i class="fa-solid fa-check"></i> Quick recovery from foot traffic</li>
                 <li><i class="fa-solid fa-check"></i> Ideal for family play lawns</li>
               </ul>
+              <button class="btn btn-outline full-width mt-15" onclick="openBookingModal('Fine Grass')">Select Fine Grass</button>
             </div>
           </div>
 
@@ -131,13 +133,14 @@
                 <li><i class="fa-solid fa-check"></i> Rapid full-coverage growth</li>
                 <li><i class="fa-solid fa-check"></i> Cost-effective for large grounds</li>
               </ul>
+              <button class="btn btn-outline full-width mt-15" onclick="openBookingModal('Dhaka Grass')">Select Dhaka Grass</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Premium Grass Products & Pricing Cards -->
+    <!-- 3. Premium Grass Products & Pricing -->
     <section class="section" id="products">
       <div class="container">
         <div class="section-title">
@@ -147,6 +150,7 @@
         </div>
 
         <div class="grid grid-3">
+          <!-- Korean Grass -->
           <div class="product-card">
             <div class="product-badge">Best Seller</div>
             <img src="23501_8986a2.jpg" alt="Freshly Harvested Korean Grass Rolls" class="product-img">
@@ -154,7 +158,7 @@
               <h3>Korean Grass Rolls</h3>
               <p class="product-desc">Pre-cut dense rolls ready for immediate installation.</p>
               <div class="price-box">
-                <span class="price">Rs. 35</span> <span class="unit">/ Sq. Ft.</span>
+                <span class="price">Rs. 45</span> <span class="unit">/ Sq. Ft.</span>
               </div>
               <ul class="product-specs">
                 <li><i class="fa-solid fa-ruler-combined"></i> Standard Roll Size: 1 ft x 2 ft</li>
@@ -165,13 +169,14 @@
             </div>
           </div>
 
+          <!-- Fine Grass -->
           <div class="product-card">
             <img src="23500_8986a2.jpg" alt="Fine Grass Turf Slabs" class="product-img">
             <div class="product-info">
               <h3>Fine Grass Rolls</h3>
               <p class="product-desc">Lush, soft-textured rolls for family yards.</p>
               <div class="price-box">
-                <span class="price">Rs. 25</span> <span class="unit">/ Sq. Ft.</span>
+                <span class="price">Rs. 35</span> <span class="unit">/ Sq. Ft.</span>
               </div>
               <ul class="product-specs">
                 <li><i class="fa-solid fa-ruler-combined"></i> Standard Roll Size: 1 ft x 2 ft</li>
@@ -182,13 +187,14 @@
             </div>
           </div>
 
+          <!-- Dhaka Grass -->
           <div class="product-card">
             <img src="23499_8986a2.jpg" alt="Dhaka Grass Field Slabs" class="product-img">
             <div class="product-info">
               <h3>Dhaka Grass Slabs</h3>
               <p class="product-desc">Robust grass for large grounds and farmhouses.</p>
               <div class="price-box">
-                <span class="price">Rs. 20</span> <span class="unit">/ Sq. Ft.</span>
+                <span class="price">Rs. 30</span> <span class="unit">/ Sq. Ft.</span>
               </div>
               <ul class="product-specs">
                 <li><i class="fa-solid fa-ruler-combined"></i> Standard Roll Size: 1 ft x 2 ft</li>
@@ -202,7 +208,7 @@
       </div>
     </section>
 
-    <!-- 4. Why Choose Us Section -->
+    <!-- 4. Why Choose Us -->
     <section class="section bg-dark text-white">
       <div class="container">
         <div class="section-title light">
@@ -236,7 +242,7 @@
       </div>
     </section>
 
-    <!-- 5. Immersive Korean Grass Wide Banner -->
+    <!-- 5. Wide Banner -->
     <section class="wide-banner" style="background-image: linear-gradient(90deg, rgba(14, 43, 22, 0.9) 0%, rgba(14, 43, 22, 0.4) 100%), url('23497_8986a2.jpg');">
       <div class="container wide-banner-content">
         <h2>Experience the Velvet Touch of Korean Grass</h2>
@@ -245,7 +251,7 @@
       </div>
     </section>
 
-    <!-- 6. Grass Quantity Calculator -->
+    <!-- 6. Quantity & Cost Calculator -->
     <section class="section bg-light" id="calculator">
       <div class="container">
         <div class="calc-wrapper">
@@ -260,13 +266,13 @@
           </div>
 
           <div class="calc-card">
-            <form id="calculatorForm">
+            <form id="calculatorForm" onsubmit="event.preventDefault();">
               <div class="form-group">
                 <label for="grassTypeSelect">Select Grass Variety</label>
                 <select id="grassTypeSelect" class="form-control">
-                  <option value="35">Korean Grass (Rs. 35/sq.ft)</option>
-                  <option value="25">Fine Grass (Rs. 25/sq.ft)</option>
-                  <option value="20">Dhaka Grass (Rs. 20/sq.ft)</option>
+                  <option value="45">Korean Grass (Rs. 45/sq.ft)</option>
+                  <option value="35">Fine Grass (Rs. 35/sq.ft)</option>
+                  <option value="30">Dhaka Grass (Rs. 30/sq.ft)</option>
                 </select>
               </div>
 
@@ -293,7 +299,7 @@
                 <hr>
                 <div class="result-row total">
                   <span>Estimated Total Cost:</span>
-                  <strong id="calcCost">Rs. 10,500</strong>
+                  <strong id="calcCost">Rs. 13,500</strong>
                 </div>
               </div>
 
@@ -304,7 +310,7 @@
       </div>
     </section>
 
-    <!-- 7. Our Work & Installation Gallery -->
+    <!-- 7. Gallery Section -->
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-title">
@@ -313,7 +319,6 @@
           <p>Real photographs of our lawn projects, grass harvesting, and professional installation teams in Lahore.</p>
         </div>
 
-        <!-- Filter Buttons -->
         <div class="gallery-filters">
           <button class="filter-btn active" data-filter="all">All Photos</button>
           <button class="filter-btn" data-filter="korean">Korean Grass</button>
@@ -321,7 +326,6 @@
           <button class="filter-btn" data-filter="installation">Installation Work</button>
         </div>
 
-        <!-- Gallery Grid -->
         <div class="gallery-grid">
           <div class="gallery-item" data-category="korean">
             <img src="23497_8986a2.jpg" alt="Dense Korean Grass Lawn Texture" loading="lazy">
@@ -374,7 +378,7 @@
       </div>
     </section>
 
-    <!-- 8. Online Slot Booking Banner -->
+    <!-- 8. Booking Banner -->
     <section class="booking-cta-section">
       <div class="container text-center">
         <h2>Ready for a Fresh Lawn Transformation?</h2>
@@ -383,7 +387,7 @@
       </div>
     </section>
 
-    <!-- 9. Realistic Customer Reviews Section -->
+    <!-- 9. Customer Reviews -->
     <section class="section bg-light" id="reviews">
       <div class="container">
         <div class="section-title">
@@ -393,7 +397,6 @@
         </div>
 
         <div class="reviews-grid" id="reviewsGrid">
-          <!-- Sample Review 1 -->
           <div class="review-card">
             <div class="review-header">
               <div>
@@ -405,9 +408,4 @@
               </div>
             </div>
             <div class="grass-bought">Grass Purchased: <strong>Korean Grass</strong></div>
-            <p class="review-text">"Ordered 1,200 sq. ft. of Korean grass for my lawn in Phase 6. The team brought fresh morning rolls and completed the installation on the same day. The grass is dense and super green."</p>
-          </div>
-
-          <!-- Sample Review 2 -->
-          <div class="review-card">
-            <div 
+            <p
