@@ -63,6 +63,7 @@ ul {
 .bg-dark { background-color: var(--dark); }
 .text-white { color: var(--white); }
 .text-white h2, .text-white h3 { color: var(--white); }
+.mt-15 { margin-top: 15px; }
 
 .section {
   padding: 80px 0;
@@ -172,8 +173,8 @@ ul {
   gap: 30px;
 }
 
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
 /* Top Announcement Bar */
 .top-bar {
@@ -182,6 +183,8 @@ ul {
   font-size: 0.85rem;
   padding: 8px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1001;
 }
 
 .top-bar-content {
@@ -200,7 +203,7 @@ ul {
   position: sticky;
   top: 0;
   background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   z-index: 1000;
 }
 
@@ -239,6 +242,12 @@ ul {
   color: var(--primary);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .hamburger {
   display: none;
   background: none;
@@ -253,8 +262,8 @@ ul {
   background-size: cover;
   background-position: center;
   color: var(--white);
-  padding: 140px 0 100px;
-  min-height: 85vh;
+  padding: 100px 0 80px;
+  min-height: 80vh;
   display: flex;
   align-items: center;
 }
@@ -320,6 +329,8 @@ ul {
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .variety-card:hover {
@@ -352,6 +363,9 @@ ul {
 
 .card-body {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-body h3 {
@@ -361,6 +375,10 @@ ul {
 .card-body p {
   color: var(--gray);
   font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.feature-list {
   margin-bottom: 15px;
 }
 
@@ -744,6 +762,10 @@ ul {
   padding: 20px;
 }
 
+.modal.active, .lightbox-modal.active {
+  display: flex;
+}
+
 .modal-content {
   background: var(--white);
   padding: 35px;
@@ -760,6 +782,10 @@ ul {
   font-size: 2rem;
   cursor: pointer;
   color: var(--gray);
+}
+
+.lightbox-modal {
+  flex-direction: column;
 }
 
 .lightbox-modal img {
@@ -796,4 +822,4 @@ ul {
   .hero h1 { font-size: 2.1rem; }
   .footer-grid { grid-template-columns: 1fr; }
   .top-bar-content { flex-direction: column; text-align: center; gap: 5px; }
-}
+  }
