@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Premium Korean Grass, Fine Grass & Dhaka Grass delivery and professional installation across Lahore. Transform your lawn with fresh green grass rolls.">
   <title>Lahore Green Lawns | Premium Korean, Fine & Dhaka Grass</title>
-  
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom Stylesheet -->
@@ -40,7 +40,7 @@
 
       <div class="nav-actions">
         <button class="btn btn-primary" onclick="openBookingModal()">Book Installation</button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -242,16 +242,7 @@
       </div>
     </section>
 
-    <!-- 5. Wide Banner -->
-    <section class="wide-banner" style="background-image: linear-gradient(90deg, rgba(14, 43, 22, 0.9) 0%, rgba(14, 43, 22, 0.4) 100%), url('23497_8986a2.jpg');">
-      <div class="container wide-banner-content">
-        <h2>Experience the Velvet Touch of Korean Grass</h2>
-        <p>Give your home garden a true resort-style finish. Soft, dense, and striking vibrant green year-round.</p>
-        <button class="btn btn-primary" onclick="openBookingModal('Korean Grass')">Schedule Lawn Measurement</button>
-      </div>
-    </section>
-
-    <!-- 6. Quantity & Cost Calculator -->
+    <!-- 5. Cost Calculator Section -->
     <section class="section bg-light" id="calculator">
       <div class="container">
         <div class="calc-wrapper">
@@ -269,7 +260,7 @@
             <form id="calculatorForm" onsubmit="event.preventDefault();">
               <div class="form-group">
                 <label for="grassTypeSelect">Select Grass Variety</label>
-                <select id="grassTypeSelect" class="form-control">
+                <select id="grassTypeSelect" class="form-control" onchange="updateCalculator()">
                   <option value="45">Korean Grass (Rs. 45/sq.ft)</option>
                   <option value="35">Fine Grass (Rs. 35/sq.ft)</option>
                   <option value="30">Dhaka Grass (Rs. 30/sq.ft)</option>
@@ -279,11 +270,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="lawnLength">Length (Feet)</label>
-                  <input type="number" id="lawnLength" class="form-control" placeholder="e.g. 20" min="1" value="20" required>
+                  <input type="number" id="lawnLength" class="form-control" placeholder="e.g. 20" min="1" value="20" oninput="updateCalculator()" required>
                 </div>
                 <div class="form-group">
                   <label for="lawnWidth">Width (Feet)</label>
-                  <input type="number" id="lawnWidth" class="form-control" placeholder="e.g. 15" min="1" value="15" required>
+                  <input type="number" id="lawnWidth" class="form-control" placeholder="e.g. 15" min="1" value="15" oninput="updateCalculator()" required>
                 </div>
               </div>
 
@@ -310,7 +301,7 @@
       </div>
     </section>
 
-    <!-- 7. Gallery Section -->
+    <!-- 6. Gallery Section -->
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-title">
@@ -320,10 +311,10 @@
         </div>
 
         <div class="gallery-filters">
-          <button class="filter-btn active" data-filter="all">All Photos</button>
-          <button class="filter-btn" data-filter="korean">Korean Grass</button>
-          <button class="filter-btn" data-filter="harvest">Harvest & Delivery</button>
-          <button class="filter-btn" data-filter="installation">Installation Work</button>
+          <button class="filter-btn active" onclick="filterGallery('all', this)">All Photos</button>
+          <button class="filter-btn" onclick="filterGallery('korean', this)">Korean Grass</button>
+          <button class="filter-btn" onclick="filterGallery('harvest', this)">Harvest & Delivery</button>
+          <button class="filter-btn" onclick="filterGallery('installation', this)">Installation Work</button>
         </div>
 
         <div class="gallery-grid">
@@ -378,16 +369,7 @@
       </div>
     </section>
 
-    <!-- 8. Booking Banner -->
-    <section class="booking-cta-section">
-      <div class="container text-center">
-        <h2>Ready for a Fresh Lawn Transformation?</h2>
-        <p>Book a free site visit or schedule your installation slot with our expert team in Lahore today.</p>
-        <button class="btn btn-primary btn-lg" onclick="openBookingModal()"><i class="fa-solid fa-calendar-plus"></i> Book Installation Slot Now</button>
-      </div>
-    </section>
-
-    <!-- 9. Customer Reviews -->
+    <!-- 7. Customer Reviews Section -->
     <section class="section bg-light" id="reviews">
       <div class="container">
         <div class="section-title">
@@ -408,4 +390,17 @@
               </div>
             </div>
             <div class="grass-bought">Grass Purchased: <strong>Korean Grass</strong></div>
-            <p
+            <p class="review-text">"Ordered Korean grass for my 1-kanal home lawn. The team delivered completely fresh grass rolls early morning and completed the ground leveling and installation in a single day. Extremely soft carpet finish!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <h4 class="customer-name">Hamza Malik</h4>
+                <span class="customer-location"><i class="fa-solid fa-location-dot"></i> Bahria Town, Lahore</span>
+              </div>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="grass-boug
