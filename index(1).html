@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium Korean Grass, Fine Grass & Dhaka Grass delivery and professional installation across Lahore. Transform your lawn with fresh green grass rolls.">
+  <title>Lahore Green Lawns | Premium Korean, Fine & Dhaka Grass</title>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span><i class="fa-solid fa-truck-fast"></i> Fresh Grass Rolls Delivered & Installed Across Lahore</span>
+      <a href="https://wa.me/923452268329" target="_blank" class="top-bar-link"><i class="fa-brands fa-whatsapp"></i> Quick Booking: 0345-2268329</a>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-leaf logo-icon"></i>
+        <span>Lahore<strong>Green</strong></span>
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="#varieties" class="nav-link">Grass Varieties</a>
+        <a href="#products" class="nav-link">Pricing</a>
+        <a href="#calculator" class="nav-link">Calculator</a>
+        <a href="#gallery" class="nav-link">Our Work</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary" onclick="openBookingModal()">Book Installation</button>
+        <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero" style="background-image: linear-gradient(rgba(10, 26, 15, 0.75), rgba(10, 26, 15, 0.75)), url('23497_8986a2.jpg');">
+      <div class="container hero-content">
+        <span class="badge">Lahore's #1 Lawn & Grass Specialist</span>
+        <h1>Transform Your Property With Premium Fresh Grass Lawns</h1>
+        <p>Direct from farm to your garden. Freshly harvested Korean Grass, Fine Grass, and Dhaka Grass installed with extreme precision across Lahore.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-lg" onclick="openBookingModal()"><i class="fa-solid fa-calendar-check"></i> Book Installation Slot</button>
+          <a href="#calculator" class="btn btn-secondary btn-lg"><i class="fa-solid fa-calculator"></i> Estimate Lawn Cost</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>Fresh Farm Turf</span>
+          </div>
+          <div class="stat-item">
+            <strong>500+</strong>
+            <span>Lahore Lawns Completed</span>
+          </div>
+          <div class="stat-item">
+            <strong>24 HR</strong>
+            <span>Quick Installation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Grass Varieties Section -->
+    <section class="section bg-light" id="varieties">
+      <div class="container">
+        <div class="section-title">
+          <span class="subheading">Authentic Turf Varieties</span>
+          <h2>Visual Guide to Our Grass Types</h2>
+          <p>Choose the exact texture, durability, and shade ideal for your residential villa, modern house, or farmhouse.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Korean Grass -->
+          <div class="variety-card">
+            <div class="card-image">
+              <img src="23496_8986a2.jpg" alt="Dense Vibrant Green Korean Grass" loading="lazy">
+              <span class="tag tag-popular">Most Popular</span>
+            </div>
+            <div class="card-body">
+              <h3>Korean Grass (Zoysia)</h3>
+              <p>Ultra-dense, velvety soft carpet grass with low water requirements and rich green aesthetic. Perfect for luxury house gardens and modern villas.</p>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Extremely soft leaf texture</li>
+                <li><i class="fa-solid fa-check"></i> Slow growing & low maintenance</li>
+                <li><i class="fa-solid fa-check"></i> High shade & heat tolerance</li>
+              </ul>
+              <button class="btn btn-outline full-width mt-15" onclick="openBookingModal('Korean Grass')">Select Korean Grass</button>
+            </div>
+          </div>
+
+          <!-- Fine Grass -->
+          <div class="variety-card">
+            <div class="card-image">
+              <img src="23495_8986a2.jpg" alt="Fine Grass Turf Surface" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3>Fine Grass</h3>
+              <p>Classic fine-bladed green lawn grass offering lush density and rapid root establishment for everyday home gardens.</p>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Vibrant emerald green color</li>
+                <li><i class="fa-solid fa-check"></i> Quick recovery from foot traffic</li>
+                <li><i class="fa-solid fa-check"></i> Ideal for family play lawns</li>
+              </ul>
+              <button class="btn btn-outline full-width mt-15" onclick="openBookingModal('Fine Grass')">Select Fine Grass</button>
+            </div>
+          </div>
+
+          <!-- Dhaka Grass -->
+          <div class="variety-card">
+            <div class="card-image">
+              <img src="23498_8986a2.jpg" alt="Vibrant Wide Lawn Dhaka Grass" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3>Dhaka Grass</h3>
+              <p>Hardy, high-durability grass variety specifically suited for large farmhouses, park spaces, and high-sun exposure fields.</p>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Heavy foot traffic resistance</li>
+                <li><i class="fa-solid fa-check"></i> Rapid full-coverage growth</li>
+                <li><i class="fa-solid fa-check"></i> Cost-effective for large grounds</li>
+              </ul>
+              <button class="btn btn-outline full-width mt-15" onclick="openBookingModal('Dhaka Grass')">Select Dhaka Grass</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Premium Grass Products & Pricing -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-title">
+          <span class="subheading">Direct Farm Rates</span>
+          <h2>Fresh Grass Rolls & Delivery Rates</h2>
+          <p>Order fresh, neatly harvested grass rolls delivered and installed by our professional team.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Korean Grass -->
+          <div class="product-card">
+            <div class="product-badge">Best Seller</div>
+            <img src="23501_8986a2.jpg" alt="Freshly Harvested Korean Grass Rolls" class="product-img">
+            <div class="product-info">
+              <h3>Korean Grass Rolls</h3>
+              <p class="product-desc">Pre-cut dense rolls ready for immediate installation.</p>
+              <div class="price-box">
+                <span class="price">Rs. 45</span> <span class="unit">/ Sq. Ft.</span>
+              </div>
+              <ul class="product-specs">
+                <li><i class="fa-solid fa-ruler-combined"></i> Standard Roll Size: 1 ft x 2 ft</li>
+                <li><i class="fa-solid fa-truck"></i> Farm Fresh Morning Delivery</li>
+                <li><i class="fa-solid fa-layer-group"></i> Thick Root Soil Base</li>
+              </ul>
+              <button class="btn btn-outline full-width" onclick="openBookingModal('Korean Grass')">Order Korean Grass</button>
+            </div>
+          </div>
+
+          <!-- Fine Grass -->
+          <div class="product-card">
+            <img src="23500_8986a2.jpg" alt="Fine Grass Turf Slabs" class="product-img">
+            <div class="product-info">
+              <h3>Fine Grass Rolls</h3>
+              <p class="product-desc">Lush, soft-textured rolls for family yards.</p>
+              <div class="price-box">
+                <span class="price">Rs. 35</span> <span class="unit">/ Sq. Ft.</span>
+              </div>
+              <ul class="product-specs">
+                <li><i class="fa-solid fa-ruler-combined"></i> Standard Roll Size: 1 ft x 2 ft</li>
+                <li><i class="fa-solid fa-truck"></i> Daily Harvest Delivery</li>
+                <li><i class="fa-solid fa-seedling"></i> Deep Root System</li>
+              </ul>
+              <button class="btn btn-outline full-width" onclick="openBookingModal('Fine Grass')">Order Fine Grass</button>
+            </div>
+          </div>
+
+          <!-- Dhaka Grass -->
+          <div class="product-card">
+            <img src="23499_8986a2.jpg" alt="Dhaka Grass Field Slabs" class="product-img">
+            <div class="product-info">
+              <h3>Dhaka Grass Slabs</h3>
+              <p class="product-desc">Robust grass for large grounds and farmhouses.</p>
+              <div class="price-box">
+                <span class="price">Rs. 30</span> <span class="unit">/ Sq. Ft.</span>
+              </div>
+              <ul class="product-specs">
+                <li><i class="fa-solid fa-ruler-combined"></i> Standard Roll Size: 1 ft x 2 ft</li>
+                <li><i class="fa-solid fa-truck"></i> Bulk Quantity Transport</li>
+                <li><i class="fa-solid fa-sun"></i> High Sunlight Resistance</li>
+              </ul>
+              <button class="btn btn-outline full-width" onclick="openBookingModal('Dhaka Grass')">Order Dhaka Grass</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Why Choose Us -->
+    <section class="section bg-dark text-white">
+      <div class="container">
+        <div class="section-title light">
+          <span class="subheading">Professional Standards</span>
+          <h2>Why Lahore Property Owners Trust Us</h2>
+          <p>We combine organic farm cultivation with expert installation techniques.</p>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>100% Farm Fresh</h3>
+            <p>Cut fresh on the morning of delivery to ensure max root survival and green longevity.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-user-gear"></i></div>
+            <h3>Expert Ground Prep</h3>
+            <p>Complete soil leveling, weed removal, and fertilizer preparation prior to laying grass.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3>No Hidden Costs</h3>
+            <p>Transparent square-foot estimates inclusive of grass, transport, and labor fees.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Aftercare Support</h3>
+            <p>Free lawn maintenance instructions and watering schedules for every client.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Cost Calculator Section -->
+    <section class="section bg-light" id="calculator">
+      <div class="container">
+        <div class="calc-wrapper">
+          <div class="calc-info">
+            <span class="subheading">Instant Cost Estimator</span>
+            <h2>Grass Quantity & Cost Calculator</h2>
+            <p>Enter your lawn length and width in feet to get an instant cost estimate for materials and installation.</p>
+            <div class="calc-tip">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span><strong>Tip:</strong> We recommend adding +5% extra coverage for curve trimming and edging alignment.</span>
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <form id="calculatorForm" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label for="grassTypeSelect">Select Grass Variety</label>
+                <select id="grassTypeSelect" class="form-control" onchange="updateCalculator()">
+                  <option value="45">Korean Grass (Rs. 45/sq.ft)</option>
+                  <option value="35">Fine Grass (Rs. 35/sq.ft)</option>
+                  <option value="30">Dhaka Grass (Rs. 30/sq.ft)</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="lawnLength">Length (Feet)</label>
+                  <input type="number" id="lawnLength" class="form-control" placeholder="e.g. 20" min="1" value="20" oninput="updateCalculator()" required>
+                </div>
+                <div class="form-group">
+                  <label for="lawnWidth">Width (Feet)</label>
+                  <input type="number" id="lawnWidth" class="form-control" placeholder="e.g. 15" min="1" value="15" oninput="updateCalculator()" required>
+                </div>
+              </div>
+
+              <div class="calc-result-box">
+                <div class="result-row">
+                  <span>Total Area:</span>
+                  <strong id="calcArea">300 Sq. Ft.</strong>
+                </div>
+                <div class="result-row">
+                  <span>Estimated Grass Rolls Needed:</span>
+                  <strong id="calcRolls">150 Rolls (2 sq.ft/roll)</strong>
+                </div>
+                <hr>
+                <div class="result-row total">
+                  <span>Estimated Total Cost:</span>
+                  <strong id="calcCost">Rs. 13,500</strong>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary full-width" onclick="bookFromCalculator()"><i class="fa-brands fa-whatsapp"></i> Reserve This Estimate On WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Gallery Section -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <span class="subheading">Visual Showcase</span>
+          <h2>Our Work & Lawn Gallery</h2>
+          <p>Real photographs of our lawn projects, grass harvesting, and professional installation teams in Lahore.</p>
+        </div>
+
+        <div class="gallery-filters">
+          <button class="filter-btn active" onclick="filterGallery('all', this)">All Photos</button>
+          <button class="filter-btn" onclick="filterGallery('korean', this)">Korean Grass</button>
+          <button class="filter-btn" onclick="filterGallery('harvest', this)">Harvest & Delivery</button>
+          <button class="filter-btn" onclick="filterGallery('installation', this)">Installation Work</button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-category="korean">
+            <img src="23497_8986a2.jpg" alt="Dense Korean Grass Lawn Texture" loading="lazy">
+            <div class="gallery-overlay" onclick="openLightbox('23497_8986a2.jpg', 'Dense Vibrant Green Korean Lawn Surface')">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Vibrant Korean Grass Lawn</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="korean">
+            <img src="23498_8986a2.jpg" alt="Expansive Luxury Lawn" loading="lazy">
+            <div class="gallery-overlay" onclick="openLightbox('23498_8986a2.jpg', 'Vibrant Green Lawn Project in DHA Lahore')">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Luxury House Lawn</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="installation">
+            <img src="23500_8986a2.jpg" alt="Ground Leveling & Professional Installation" loading="lazy">
+            <div class="gallery-overlay" onclick="openLightbox('23500_8986a2.jpg', 'Professional Installers Laying Fresh Turf Slabs')">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Precision Turf Laying</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="harvest">
+            <img src="23499_8986a2.jpg" alt="Cutting and Rolling Fresh Grass" loading="lazy">
+            <div class="gallery-overlay" onclick="openLightbox('23499_8986a2.jpg', 'Fresh Grass Roll Harvesting at Farm')">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Farm Fresh Grass Harvesting</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="harvest">
+            <img src="23501_8986a2.jpg" alt="Fresh Turf Slabs Stacked for Delivery" loading="lazy">
+            <div class="gallery-overlay" onclick="openLightbox('23501_8986a2.jpg', 'Neatly Arranged Fresh Turf Rolls Ready for Transport')">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Fresh Rolls Ready for Delivery</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="korean">
+            <img src="23496_8986a2.jpg" alt="Fresh Soft Grass Close Up" loading="lazy">
+            <div class="gallery-overlay" onclick="openLightbox('23496_8986a2.jpg', 'Close-up Texture of Healthy Soft Grass')">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <span>Soft Leaf Texture Close-up</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Customer Reviews Section -->
+    <section class="section bg-light" id="reviews">
+      <div class="container">
+        <div class="section-title">
+          <span class="subheading">Building Greener Spaces Across Lahore</span>
+          <h2>What Our Customers Say</h2>
+          <p>Read real client experiences from residential house owners across DHA, Bahria Town, and Gulberg.</p>
+        </div>
+
+        <div class="reviews-grid" id="reviewsGrid">
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <h4 class="customer-name">Usman Chaudhry</h4>
+                <span class="customer-location"><i class="fa-solid fa-location-dot"></i> DHA Phase 6, Lahore</span>
+              </div>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="grass-bought">Grass Purchased: <strong>Korean Grass</strong></div>
+            <p class="review-text">"Ordered Korean grass for my 1-kanal home lawn. The team delivered completely fresh grass rolls early morning and completed the ground leveling and installation in a single day. Extremely soft carpet finish!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <h4 class="customer-name">Hamza Malik</h4>
+                <span class="customer-location"><i class="fa-solid fa-location-dot"></i> Bahria Town, Lahore</span>
+              </div>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="grass-bought">Grass Purchased: <strong>Fine Grass</strong></div>
+            <p class="review-text">"Outstanding service! Their cost calculator gave me the exact figure needed. No hidden labor or delivery charges when the team arrived. The lawn looks lush and green."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <h4 class="customer-name">Bilal Tariq</h4>
+                <span class="customer-location"><i class="fa-solid fa-location-dot"></i> Bedian Road Farmhouse, Lahore</span>
+              </div>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="grass-bought">Grass Purchased: <strong>Dhaka Grass</strong></div>
+            <p class="review-text">"Needed 8,000 sq.ft for my farmhouse grounds. Lahore Green delivered high-density Dhaka grass slabs that took root within 5 days. Highly recommended for large projects."</p>
+          </div>
+        </div>
+
+        <div class="review-action-container">
+          <button class="btn btn-outline" onclick="openReviewModal()"><i class="fa-solid fa-pen-to-square"></i> Leave a Customer Review</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container medium">
+        <div class="section-title">
+          <span class="subheading">Got Questions?</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Everything you need to know about our grass delivery, surface preparation, and lawn care.</p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Which grass variety is best for residential house lawns?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Korean Grass is our top recommendation for modern residential villas because of its ultra-dense, velvety soft carpet feel, low maintenance, and vibrant year-round look. Fine Grass is another great option for active family yards with children.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>How quickly can you deliver and install grass in Lahore?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>We offer 24 to 48-hour delivery across all areas of Lahore including DHA, Bahria Town, Gulberg, Johar Town, and Lake City. Grass is freshly harvested on the morning of delivery for maximum root survival.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Do you handle ground leveling and soil preparation?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Yes! Our professional installation service includes site cleaning, weed removal, soil tilling, leveling, and applying essential organic root fertilizers before laying the fresh grass rolls.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>How often should I water my newly installed grass lawn?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Newly laid grass should be watered thoroughly twice daily (early morning and late afternoon) for the first 10-14 days until roots firmly bond with the base soil. We provide a full care guide upon completion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Final Banner -->
+    <section class="final-banner" style="background-image: linear-gradient(rgba(10, 26, 15, 0.85), rgba(10, 26, 15, 0.85)), url('23497_8986a2.jpg');">
+      <div class="container text-center">
+        <h2>Ready to Build Your Dream Lawn?</h2>
+        <p>Get fresh farm grass delivered directly to your doorstep with expert installation across Lahore.</p>
+        <div class="final-buttons">
+          <button class="btn btn-primary btn-lg" onclick="openBookingModal()"><i class="fa-solid fa-calendar-check"></i> Book Site Visit</button>
+          <a href="https://wa.me/923452268329" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="logo footer-logo">
+            <i class="fa-solid fa-leaf logo-icon"></i>
+            <span>Lahore<strong>Green</strong></span>
+          </a>
+          <p class="mt-15">Lahore's premier fresh grass supply and lawn installation service. Premium Korean, Fine, and Dhaka grass delivered directly from farm to garden.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#varieties">Grass Varieties</a></li>
+            <li><a href="#products">Pricing & Rates</a></li>
+            <li><a href="#calculator">Cost Calculator</a></li>
+            <li><a href="#gallery">Our Work</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Grass Varieties</h4>
+          <ul>
+            <li><a href="#varieties">Korean Carpet Grass</a></li>
+            <li><a href="#varieties">Fine Emerald Grass</a></li>
+            <li><a href="#varieties">Dhaka Farmhouse Grass</a></li>
+            <li><a href="#products">Fresh Turf Rolls</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-phone"></i> <span>0345-2268329</span></li>
+            <li><i class="fa-brands fa-whatsapp"></i> <span>0345-2268329</span></li>
+            <li><i class="fa-solid fa-location-dot"></i> <span>Lahore, Punjab, Pakistan</span></li>
+            <li><i class="fa-solid fa-clock"></i> <span>Mon - Sun: 7:00 AM - 9:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Lahore Green Lawns. All Rights Reserved. Fresh Farm Grass Delivery & Installation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+      <h3>Book Grass Installation</h3>
+      <p style="margin-bottom: 20px; font-size: 0.9rem; color: var(--gray);">Fill out details below to reserve your installation slot via WhatsApp.</p>
+      
+      <form onsubmit="handleBookingSubmit(event)">
+        <div class="form-group">
+          <label for="modalName">Full Name</label>
+          <input type="text" id="modalName" class="form-control" placeholder="e.g. Ali Khan" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modalPhone">Phone / WhatsApp Number</label>
+          <input type="tel" id="modalPhone" class="form-control" placeholder="03XX-XXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modalLocation">Area / Society in Lahore</label>
+          <input type="text" id="modalLocation" class="form-control" placeholder="e.g. DHA Phase 5 / Bahria Town" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modalGrassSelect">Grass Variety</label>
+          <select id="modalGrassSelect" class="form-control">
+            <option value="Korean Grass">Korean Grass (Rs. 45/sq.ft)</option>
+            <option value="Fine Grass">Fine Grass (Rs. 35/sq.ft)</option>
+            <option value="Dhaka Grass">Dhaka Grass (Rs. 30/sq.ft)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="modalAreaInput">Approximate Lawn Size (Sq. Ft.)</label>
+          <input type="number" id="modalAreaInput" class="form-control" placeholder="e.g. 500">
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width"><i class="fa-brands fa-whatsapp"></i> Confirm Booking On WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Review Modal -->
+  <div class="modal" id="reviewModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeReviewModal()">&times;</span>
+      <h3>Leave a Review</h3>
+      <p style="margin-bottom: 20px; font-size: 0.9rem; color: var(--gray);">Share your lawn transformation experience with us!</p>
+      
+      <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+        <div class="form-group">
+          <label for="revName">Your Name</label>
+          <input type="text" id="revName" class="form-control" placeholder="e.g. Ahmed Raza" required>
+        </div>
+
+        <div class="form-group">
+          <label for="revLocation">Location / Society</label>
+          <input type="text" id="revLocation" class="form-control" placeholder="e.g. Johar Town, Lahore">
+        </div>
+
+        <div class="form-group">
+          <label for="revGrass">Grass Variety Purchased</label>
+          <select id="revGrass" class="form-control">
+            <option value="Korean Grass">Korean Grass</option>
+            <option value="Fine Grass">Fine Grass</option>
+            <option value="Dhaka Grass">Dhaka Grass</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="revRating">Rating</label>
+          <select id="revRating" class="form-control">
+            <option value="5">5 Stars (Excellent)</option>
+            <option value="4">4 Stars (Very Good)</option>
+            <option value="3">3 Stars (Good)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="revText">Your Review</label>
+          <textarea id="revText" class="form-control" rows="3" placeholder="Tell us about the grass quality and installation..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" src="" alt="Enlarged Lawn Photo">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- JavaScript Link -->
+  <script src="script.js"></script>
+</body>
+</html>
