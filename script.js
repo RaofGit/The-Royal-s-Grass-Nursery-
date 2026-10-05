@@ -1,77 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // 1. Mobile Menu Toggle
-  const hamburger = document.getElementById("hamburger");
+// 1. Mobile Menu Toggle
+function toggleMobileMenu() {
   const navMenu = document.getElementById("navMenu");
-
-  if (hamburger && navMenu) {
-    hamburger.addEventListener("click", function () {
-      navMenu.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-      });
-    });
+  if (navMenu) {
+    navMenu.classList.toggle("active");
   }
+}
 
-  // 2. Cost Estimator Calculations
-  const grassTypeSelect = document.getElementById("grassTypeSelect");
-  const lawnLength = document.getElementById("lawnLength");
-  const lawnWidth = document.getElementById("lawnWidth");
-
-  if (grassTypeSelect && lawnLength && lawnWidth) {
-    grassTypeSelect.addEventListener("change", updateCalculator);
-    lawnLength.addEventListener("input", updateCalculator);
-    lawnWidth.addEventListener("input", updateCalculator);
-
-    updateCalculator(); // Initial Run
-  }
-
-  // 3. Accordion FAQ
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", function () {
-      const parent = this.parentElement;
-      const isActive = parent.classList.contains("active");
-
-      document.querySelectorAll(".accordion-item").forEach((item) => {
-        item.classList.remove("active");
-      });
-
-      if (!isActive) {
-        parent.classList.add("active");
-      }
+// Close mobile nav when clicking a link
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      const navMenu = document.getElementById("navMenu");
+      if (navMenu) navMenu.classList.remove("active");
     });
   });
 
-  // 4. Gallery Filtering
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const galleryItems = document.querySelectorAll(".gallery-item");
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      this.classList.add("active");
-
-      const filterValue = this.getAttribute("data-filter");
-
-      galleryItems.forEach((item) => {
-        if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
-      });
-    });
-  });
+  // Run initial calculator update
+  updateCalculator();
 });
 
-// Live Calculator Calculation Logic
+// 2. Cost Estimator Logic
 function updateCalculator() {
-  const rate = parseFloat(document.getElementById("grassTypeSelect").value) || 0;
-  const length = parseFloat(document.getElementById("lawnLength").value) || 0;
-  const width = parseFloat(document.getElementById("lawnWidth").value) || 0;
+  const selectElem = document.getElementById("grassTypeSelect");
+  const lengthElem = document.getElementById("lawnLength");
+  const widthElem = document.getElementById("lawnWidth");
+
+  if (!selectElem || !lengthElem || !widthElem) return;
+
+  const rate = parseFloat(selectElem.value) || 0;
+  const length = parseFloat(lengthElem.value) || 0;
+  const width = parseFloat(widthElem.value) || 0;
 
   const area = length * width;
   const rolls = Math.ceil(area / 2); // 1 Roll = 2 sq. ft.
@@ -82,7 +40,6 @@ function updateCalculator() {
   document.getElementById("calcCost").textContent = "Rs. " + totalCost.toLocaleString();
 }
 
-// Redirect Calculator Quote Directly to WhatsApp
 function bookFromCalculator() {
   const selectElement = document.getElementById("grassTypeSelect");
   const grassName = selectElement.options[selectElement.selectedIndex].text.split("(")[0].trim();
@@ -91,13 +48,58 @@ function bookFromCalculator() {
   const area = document.getElementById("calcArea").textContent;
   const cost = document.getElementById("calcCost").textContent;
 
-  const message = `Hello, I checked your Grass Calculator and need a quote:\n\n- Grass Type: ${grassName}\n- Dimensions: ${length}ft x ${width}ft (${area})\n- Estimated Price: ${cost}\n\nPlease confirm availability and delivery slot.`;
+  const message = `Hello, I checked your Lawn Calculator:\n\n- Grass Type: ${grassName}\n- Dimensions: ${length}ft x ${width}ft (${area})\n- Estimated Price: ${cost}\n\nPlease confirm availability and booking.`;
   
-  const whatsappUrl = `https://wa.me/923452268329?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank");
+  window.open(`https://wa.me/923452268329?text=${encodeURIComponent(message)}`, "_blank");
 }
 
-// Booking Modal Control
+// 3. FAQ Accordion Toggle
+function toggleAccordion(button) {
+  const item = button.parentElement;
+  const isActive = item.classList.contains("active");
+
+  document.querySelectorAll(".accordion-item").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  if (!isActive) {
+    item.classList.add("active");
+  }
+}
+
+// 4. Gallery Filtering
+function filterGallery(category, button) {
+  document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("active"));
+  button.classList.add("active");
+
+  document.querySelectorAll(".gallery-item").forEach((item) => {
+    if (category === "all" || item.getAttribute("data-category") === category) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+// 5. Lightbox Modal
+function openLightbox(imgSrc, caption) {
+  const modal = document.getElementById("lightboxModal");
+  const img = document.getElementById("lightboxImg");
+  const cap = document.getElementById("lightboxCaption");
+
+  if (modal && img && cap) {
+    img.src = imgSrc;
+    cap.textContent = caption;
+    modal.classList.add("active");
+  }
+}
+
+function closeLightbox() {
+  const modal = document.getElementById("lightboxModal");
+  if (modal) modal.classList.remove("active");
+}
+
+// 6. Booking Modal
 function openBookingModal(grassName = "") {
   const modal = document.getElementById("bookingModal");
   if (modal) {
@@ -129,14 +131,13 @@ function handleBookingSubmit(e) {
   const grass = document.getElementById("modalGrassSelect").value;
   const area = document.getElementById("modalAreaInput").value || "N/A";
 
-  const message = `New Installation Booking Request:\n\n- Name: ${name}\n- Phone: ${phone}\n- Area/Society: ${location}\n- Grass Type: ${grass}\n- Approximate Size: ${area} sq.ft.`;
+  const message = `New Installation Booking Request:\n\n- Name: ${name}\n- Phone: ${phone}\n- Area/Society: ${location}\n- Grass Type: ${grass}\n- Size: ${area} sq.ft.`;
   
-  const whatsappUrl = `https://wa.me/923452268329?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank");
+  window.open(`https://wa.me/923452268329?text=${encodeURIComponent(message)}`, "_blank");
   closeBookingModal();
 }
 
-// Review Modal Control
+// 7. Review Modal & Dynamic Review Adding
 function openReviewModal() {
   const modal = document.getElementById("reviewModal");
   if (modal) modal.classList.add("active");
@@ -179,25 +180,7 @@ function handleReviewSubmit(e) {
     reviewsGrid.prepend(reviewCard);
   }
 
-  alert("Thank you for submitting your review!");
+  alert("Thank you! Your review has been published.");
   closeReviewModal();
   document.getElementById("reviewForm").reset();
-}
-
-// Gallery Lightbox Modal Control
-function openLightbox(imgSrc, caption) {
-  const modal = document.getElementById("lightboxModal");
-  const img = document.getElementById("lightboxImg");
-  const cap = document.getElementById("lightboxCaption");
-
-  if (modal && img && cap) {
-    img.src = imgSrc;
-    cap.textContent = caption;
-    modal.classList.add("active");
-  }
-}
-
-function closeLightbox() {
-  const modal = document.getElementById("lightboxModal");
-  if (modal) modal.classList.remove("active");
 }
